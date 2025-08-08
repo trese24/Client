@@ -1,6 +1,6 @@
 :root {
     
-    --accent: #4895ef;
+    
     --danger: #f72585;
     --success: #4cc9f0;
     --light: #f8f9fa;
@@ -8,19 +8,9 @@
     --gray: #6c757d;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 
-body {
-    font-family: 'Poppins', sans-serif;
-    
-    min-height: 100vh;
-    padding: 2rem;
-    color: var(--dark);
-}
+
+
 
 .container {
     max-width: 1200px;
