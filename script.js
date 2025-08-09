@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
     animateGlow();
 });
 
-// Enhanced JavaScript for better mobile handling
+// Enhanced JavaScript for better mobile handling  responsive design
 document.addEventListener('DOMContentLoaded', function() {
     const menuBtn = document.querySelector('.menu-btn');
     const navigation = document.querySelector('.navigation');
