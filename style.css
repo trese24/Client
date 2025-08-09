@@ -956,6 +956,17 @@ h1::after {
     color: rgb(0, 0, 0);
 }
 
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+    .services {
+        padding: 40px 3%;
+    }
+
+    .services .content .card {
+        padding: 20px;
+    }
+}
+
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1163,7 +1174,7 @@ h1::after {
 }
 
 /* Contact Section */
-}
+
 
 .comments-app {
     max-width: 1200px;
@@ -1174,6 +1185,14 @@ h1::after {
 }
 
 /* Floating bubbles background */
+.decorative-circle,
+.bubble {
+    pointer-events: none;
+    /* Prevents blocking clicks/taps */
+    z-index: -1;
+    /* Ensure they stay behind content */
+}
+
 .bubble {
     position: absolute;
     border-radius: 50%;
@@ -1271,6 +1290,7 @@ h1::after {
     padding: 2rem;
     min-height: 500px;
     position: relative;
+    z-index: 1;
 }
 
 /* Loading animation */
@@ -1409,6 +1429,59 @@ h1::after {
     .engagement-stats {
         flex-direction: column;
         gap: 0.5rem;
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+
+    /* Make grid layout stack vertically */
+    .comments-main {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Reduce padding inside containers */
+    .comments-container {
+        padding: 1rem;
+        min-height: auto;
+    }
+
+    /* Adjust heading sizes */
+    .comments-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .comments-header p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    /* Engagement stats stack vertically */
+    .engagement-stats {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    /* Resize decorative bubbles */
+    .bubble-1,
+    .bubble-2,
+    .bubble-3 {
+        width: 120px;
+        height: 120px;
+        filter: blur(15px);
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Even smaller adjustments */
+    .comments-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .comments-header p {
+        font-size: 0.9rem;
     }
 }
 
