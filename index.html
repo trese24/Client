@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,17 +39,14 @@
                 <div class="nav-line"></div>
             </a>
             <a href="#article" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-                <span>article</span>
+                <span>Article</span>
                 <div class="nav-line"></div>
             </a>
             <a href="#services" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-                <span>Services</span>
+                <span>Public signage</span>
                 <div class="nav-line"></div>
             </a>
-            <a href="#certificates" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-                <span>Certificate</span>
-                <div class="nav-line"></div>
-            </a>
+            
             <a href="#FileUpload" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
                 <span>Files</span>
                 <div class="nav-line"></div>
@@ -71,11 +70,11 @@
                 <h1>Welcome to VisionABLE Manila</h1>
                 <h3 class="typing-text"><span class="animated-text"></span><span class="cursor"></span></h3>
             
-                <br><p><span>“Where every sign leads to inclusion.
+                <br><p><span>Where every sign leads to inclusion.
                 <br>We advocate for accessible public signage
                 <br>for people with visual impairments because
                 <br>clear signs create safer, more inclusive cities.<br>
-                Watch. Learn. Share. Be part of the change.”
+                Watch. Learn. Share. Be part of the change.
 </span></p></br>
                 
                <!-- <div class="social-icons">
@@ -102,6 +101,7 @@
     
         <div class="video-content-container">
             <div class="video-wrapper" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="400">
+                <source src="DPWH-TALKS.png" alt="">
                 <video autoplay loop muted playsinline>
                     <source src="Titas_Intro.mp4" type="video/mp4">
                     <!-- Fallback image if video doesn't load -->
@@ -314,8 +314,8 @@ Public signs help everyone find their way. But for persons with low vision or ot
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="title">
-            <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">My Services</h2>
-            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Lorem ipsum.</p>
+            <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">Suggested public signage</h2>
+            
         </div>
         <div class="content">
             <!-- Web Design Card -->
@@ -357,211 +357,26 @@ Public signs help everyone find their way. But for persons with low vision or ot
                 </div>
                 <button class="service-btn" onclick="openServiceModal('web-dev')">View Projects</button>
             </div>
+            <!-- Web Development Card -->
+            <div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+                <div class="service-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="info">
+                    <h3><br><br><br><br> MANILA Stories in Sight</h3>
+                    <p>Watch real-life stories, expert interviews, and commuter struggles about inaccessible signage in Metro
+                        Manila. These
+                        videos aim to educate, spark empathy, and push for inclusive change.
+                    </p>
+                </div>
+                <button class="service-btn" onclick="openServiceModal('web-dev')">View Projects</button>
+            </div>
+            </div>
         </div>
     
-        <!-- Modal Structure -->
-        <div id="serviceModal" class="modal">
-            <div class="modal-content">
-                <span class="close-btn" onclick="closeModal()">&times;</span>
-                <div id="modal-web-design" class="modal-service">
-                    <h2>Web Design Projects</h2>
-                    <div class="project-grid">
-                        <div class="project-card">
-                            <img src="/Trese.jpg" alt="Portfolio Design">
-                            <h3>Creative Portfolio</h3>
-                            <p>Lorem ipsum.</p>
-                            <a href="#" target="_blank" class="project-link">Visit Website</a>
-                        </div>
-                        <div class="project-card">
-                            <img src="/Trese.jpg" alt="E-commerce UI">
-                            <h3>E-commerce UI</h3>
-                            <p>Lorem ipsum.</p>
-                            <a href="#" target="_blank" class="project-link">Visit Website</a>
-                        </div>
-                    </div>
-                </div>
-                <div id="modal-game-dev" class="modal-service">
-                    <h2>Game Development Projects</h2>
-                    <div class="project-grid">
-                        <div class="project-card">
-                            <img src="/Trese.jpg" alt="2D Platformer">
-                            <h3>Space Adventure</h3>
-                            <p>Lorem ipsum</p>
-                            <a href="#" target="_blank" class="project-link">Play Demo</a>
-                        </div>
-                        <div class="project-card">
-                            <img src="/Trese.jpg" alt="VR Experience">
-                            <h3>VR Museum Tour</h3>
-                            <p>Lorem ipsum</p>
-                            <a href="#" target="_blank" class="project-link">View Trailer</a>
-                        </div>
-                    </div>
-                </div>
-                <div id="modal-web-dev" class="modal-service">
-                    <h2>Web Development Projects</h2>
-                    <div class="project-grid">
-                        <div class="project-card">
-                            <img src="/Trese.jpg" alt="React App">
-                            <h3>Task Management App</h3>
-                            <p>Lorem ipsum</p>
-                            <a href="#" target="_blank" class="project-link">Live Demo</a>
-                        </div>
-                        <div class="project-card">
-                            <img src="/Trese.jpg" alt="API Dashboard">
-                            <h3>Analytics Dashboard</h3>
-                            <p>Lorem ipsum</p>
-                            <a href="#" target="_blank" class="project-link">View Project</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+       
 
-<!-- Certificate Section -->
-<section class="certificates" id="certificates">
-    <div class="container">
-        <div class="section-header" data-aos="fade-up" data-aos-duration="1000">
-            <h2 class="section-title">Understand the struggles. Take steps toward accessibility.</h2>
-            <p class="section-subtitle">Professional achievements and completed courses</p>
-        </div>
 
-        <div class="certificate-grid">
-            <!-- Group 1: Cyber Security Certificates -->
-            <div class="certificate-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-                <div class="certificate-img" onclick="openCertificateModal('Certi/CyberSummer.jpg', 'Lorem ipsum')">
-                    <img src="Certi/CyberSummer.jpg" alt="Cyber Summer Certification" loading="lazy">
-                    <div class="certificate-overlay">
-                        <h3>Lorem ipsum</h3>
-                        <p>"Lorem ipsumy"</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="certificate-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
-                <div class="certificate-img" onclick="openCertificateModal('Certi/GoCrayons.jpg', 'Lorem ipsum')">
-                    <img src="Certi/GoCrayons.jpg" alt="Go Crayons Certification" loading="lazy">
-                    <div class="certificate-overlay">
-                        <h3>Lorem ipsum</h3>
-                        <p>"Lorem ipsum"</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Group 2: NPC Certificates -->
-            <div class="certificate-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                <div class="certificate-img" onclick="openCertificateModal('Certi/NPC1.jpg', 'Lorem ipsum')">
-                    <img src="Certi/NPC1.jpg" alt="NPC Certification 1" loading="lazy">
-                    <div class="certificate-overlay">
-                        <h3>Lorem ipsum</h3>
-                        <p>"Lorem ipsum"</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="certificate-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="250">
-                <div class="certificate-img" onclick="openCertificateModal('Certi/NPC2.jpg', 'Lorem ipsum')">
-                    <img src="Certi/NPC2.jpg" alt="NPC Certification 2" loading="lazy">
-                    <div class="certificate-overlay">
-                        <h3>Lorem ipsum</h3>
-                        <p>"Lorem ipsum"</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="certificate-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
-                <div class="certificate-img" onclick="openCertificateModal('Certi/NPC3.jpg', 'Lorem ipsum')">
-                    <img src="Certi/NPC3.jpg" alt="NPC Certification 3" loading="lazy">
-                    <div class="certificate-overlay">
-                        <h3>Lorem ipsum</h3>
-                        <p>"Lorem ipsum"</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Group 3: Alison Certificate -->
-            <div class="certificate-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="350">
-                <div class="certificate-img" onclick="openCertificateModal('Certi/Alison.png', 'Lorem ipsum')">
-                    <img src="Certi/Alison.png" alt="Alison Certification" loading="lazy">
-                    <div class="certificate-overlay">
-                        <h3>Lorem ipsum</h3>
-                        <p>"Lorem ipsum"</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Group 4: CodeRed Certificates -->
-            <div class="certificate-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-                <div class="certificate-img" onclick="openCertificateModal('Certi/Codered.png', 'Lorem ipsum')">
-                    <img src="Certi/Codered.png" alt="Codered Certification" loading="lazy">
-                    <div class="certificate-overlay">
-                        <h3>Lorem ipsum</h3>
-                        <p>"Lorem ipsum"</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="certificate-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="450">
-                <div class="certificate-img" onclick="openCertificateModal('Certi/Codered1.png', 'Lorem ipsum')">
-                    <img src="Certi/Codered1.png" alt="Codered Certification 1" loading="lazy">
-                    <div class="certificate-overlay">
-                        <h3>Lorem ipsum</h3>
-                        <p>"Lorem ipsum"</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="certificate-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
-                <div class="certificate-img" onclick="openCertificateModal('Certi/Codered2.png', 'Lorem ipsum')">
-                    <img src="Certi/Codered2.png" alt="Codered Certification 2" loading="lazy">
-                    <div class="certificate-overlay">
-                        <h3>Lorem ipsum</h3>
-                        <p>"Lorem ipsum"</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="certificate-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="550">
-                <div class="certificate-img" onclick="openCertificateModal('Certi/Codered3.png', 'Lorem ipsum')">
-                    <img src="Certi/Codered3.png" alt="Codered Certification 3" loading="lazy">
-                    <div class="certificate-overlay">
-                        <h3>Lorem ipsum</h3>
-                        <p>"Lorem ipsum"</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="certificate-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
-                <div class="certificate-img" onclick="openCertificateModal('Certi/Codered4.png', 'Lorem ipsum')">
-                    <img src="Certi/Codered4.png" alt="Codered Certification 4" loading="lazy">
-                    <div class="certificate-overlay">
-                        <h3>Lorem ipsum</h3>
-                        <p>"Lorem ipsum"</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="certificate-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="650">
-                <div class="certificate-img" onclick="openCertificateModal('Certi/Codered5.png', 'Lorem ipsum')">
-                    <img src="Certi/Codered5.png" alt="Codered Certification 5" loading="lazy">
-                    <div class="certificate-overlay">
-                        <h3>Lorem ipsum</h3>
-                        <p>"Lorem ipsum"</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="certificate-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
-                <div class="certificate-img" onclick="openCertificateModal('Certi/Codered6.png', 'Lorem ipsum')">
-                    <img src="Certi/Codered6.png" alt="Codered Certification 6" loading="lazy">
-                    <div class="certificate-overlay">
-                        <h3>Lorem ipsum</h3>
-                        <p>"Lorem ipsum"</p>
-                    </div>
-                </div>
-            </div>
-        </div> 
-    </div>
 <section class="FileUpload" id="FileUpload">
     <div class="container">
         <h2 class="section-title">Input Data</h2>
@@ -597,7 +412,7 @@ Public signs help everyone find their way. But for persons with low vision or ot
         </div>
     
         <div class="files-section">
-            <h2 class="section-title">Your Files</h2>
+            <h2 class="section-title">Downloadable Public Signage</h2>
             <div id="filesTableContainer">
                 <table id="filesTable">
                     <thead>
@@ -623,90 +438,49 @@ Public signs help everyone find their way. But for persons with low vision or ot
     </section>
 
     <!-- The Modal -->
-     <section class="comments-section" id="comments-section">
-    <div class="auth-modal" id="auth-modal">
-        <div class="auth-content">
-            <span class="close-auth">&times;</span>
-            <div class="auth-tabs">
-                <button class="tab-btn active" id="login-tab">Login</button>
-                <button class="tab-btn" id="register-tab">Register</button>
-            </div>
-    
-            <div class="auth-form" id="login-form">
-                <h3>Login to Comment</h3>
-                <div class="form-group">
-                    <input type="email" id="login-email" placeholder="Email" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" id="login-password" placeholder="Password" required>
-                </div>
-                <button id="login-btn" class="auth-submit">Login</button>
-            </div>
-    
-            <div class="auth-form" id="register-form" style="display:none;">
-                <h3>Create Account</h3>
-                <div class="form-group">
-                    <input type="text" id="register-firstname" placeholder="First Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" id="register-lastname" placeholder="Last Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="register-email" placeholder="Email" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" id="register-password" placeholder="Password" required>
-                </div>
-                <button id="register-btn" class="auth-submit">Register</button>
-            </div>
-        </div>
-    </div>
-    
-    
-        <div class="user-info" id="user-info" style="display:none;">
-            <div class="user-greeting">
-                <span id="welcome-message"></span>
-                <button id="logout-btn" class="logout-btn">Logout</button>
-            </div>
-        </div>
+    <section class="comments-section" id="comments-section">
     
         <div class="comment-form" id="comment-form">
             <h2>Leave your comment</h2>
-            <div class="form-row">
+            <form method="POST" action="submit_comment.php">
                 <div class="form-group">
-                    <input type="text" id="comment-title" placeholder="Comment Title" required>
+                    <input type="text" name="comment_title" placeholder="Comment Title" required>
                 </div>
-            </div>
-            <div class="form-group">
-                <textarea id="comment-text" placeholder="Share your thoughts..." required></textarea>
-            </div>
-            <button id="submit-comment" class="submit-btn">Post Comment</button>
+                <div class="form-group">
+                    <textarea name="comment_text" placeholder="Share your thoughts..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Post Comment</button>
+            </form>
         </div>
     
         <div class="comments-container" id="comments-container">
             <h2>Community Comments</h2>
             <div class="comments-list" id="comments-list">
-                <!-- Comments will be loaded here -->
+                <?php while($row = $result->fetch_assoc()): ?>
+                <div class="comment-item">
+                    <div class="comment-title">
+                        <?= htmlspecialchars($row['title']) ?>
+                    </div>
+                    <div class="comment-text">
+                        <?= nl2br(htmlspecialchars($row['comment'])) ?>
+                    </div>
+                    <div class="comment-date">
+                        <?= $row['created_at'] ?>
+                    </div>
+                </div>
+                <?php endwhile; ?>
             </div>
         </div>
     
-        <footer>
-            <p>@ POVIR</p>
-            <p>Comments! - Create your own for free!</p>
-        </footer>
-    </div>
-</section>
+    </section>
+    
+
   <section class="footer" id="footer">
     
         <div class="footer-content">
             <div class="footer-main">
                 <span class="footer-title">visionABLE MANILA</span>
-                <div class="footer-social">
-                    <a href="#" class="social-icon" title="GitHub Profile"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-icon" title="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-icon" title="Twitter Profile"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon" title="Email"><i class="fas fa-envelope"></i></a>
-                </div>
+                
             </div>
             <div class="footer-bottom">
                 <p>Copyright ©2025 <a href="#">visionABLE MANILA</a>. All Rights Reserved.</p>

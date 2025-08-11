@@ -168,8 +168,8 @@ header .menu-btn.open .menu-btn__burger::after {
     font-size: 80px;
     font-weight: 700;
     line-height: 1.2;
-    background: linear-gradient(135deg, #f0eeee 0%, #9c0808 40%, #bb0a0a 85%,
-            #db0e0e 100%);
+    background: linear-gradient(135deg, #f4ef6b 0%, #f4ef6b 40%, #f4ef6b 85%,
+            #f4ef6b 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -1723,13 +1723,14 @@ h1::after {
 .footer {
     background: linear-gradient(135deg, #000016 0%, #0a0a2a 100%);
     color: #fff;
-    padding: 2em 1% 10em;
+    padding: 5em 1% 10em;
     /* Reduced padding */
-    position: relative;
+    position: fixed
     overflow: hidden;
     text-align: center;
     font-family: 'Roboto', sans-serif;
     z-index: 1;
+    width: 100%;
     box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
     border-top: 1px solid rgba(255, 255, 255,
 0.1);
@@ -1738,7 +1739,6 @@ h1::after {
     /* Added margin to separate from content above */
     padding-bottom: 3em;
     /* Added padding to ensure content doesn't touch the bottom */
-    position: relative;
     z-index: 0;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -1746,6 +1746,7 @@ h1::after {
     border-radius: 10px;
     transition: transform 0.3s ease;
     transform: translateY(0);
+    
 
 }
 
@@ -1761,7 +1762,8 @@ h1::after {
 
 .footer-content {
     max-width: 1200px;
-    margin: 0 auto;
+        /* optional for inner content centering */
+        margin: 0 auto;
 }
 
 .footer-main {
@@ -2303,3 +2305,4 @@ footer {
         width: 100%;
     }
 }
+
