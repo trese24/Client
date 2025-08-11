@@ -7,6 +7,7 @@
     <link rel="icon" href="/able.jpeg" type="image/jpeg" sizes="32x32">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styleFile.css">
+    <link rel="stylesheet" href="commentstyle.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,11 +61,14 @@
 
     <section class="main" id="main">
         <div class="main-img reveal">
+        <video autoplay loop muted playsinline>
+            <source src="Titas_Intro.mp4" type="video/mp4">
+            <!-- Fallback image if video doesn't load -->
             <img src="able.png" alt="">
+        </video>
         </div>
             <div class="home-content">
-                <h1><span>Welcome to </span><span>
-</span></h1>
+                <h1>Welcome to VisionABLE Manila</h1>
                 <h3 class="typing-text"><span class="animated-text"></span><span class="cursor"></span></h3>
             
                 <br><p><span>“Where every sign leads to inclusion.
@@ -74,46 +78,73 @@
                 Watch. Learn. Share. Be part of the change.”
 </span></p></br>
                 
-                <div class="social-icons">
+               <!-- <div class="social-icons">
                     <a href="" title="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i></a>
                     <a href="" title="GitHub Profile"><i class="fa-brands fa-github"></i></a>
                     <a href="" title="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
                     <a href="" title="TikTok Profile"><i class="fa-brands fa-tiktok"></i></a>
                     <a href="" title="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-                <a href="#contact" class="btn">Hire me</a>
-                <a href="resume/" class="btn" download="">Download CV</a>
+                </div> -->
+                <!--<a href="#contact" class="btn">Hire me</a>
+                <a href="resume/" class="btn" download="">Download CV</a> -->
             </div>
     </section>
 
 <!--  About Section -->
 
-    <section class="about" id="about">
-        <div class="title reveal">
-            <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">VisionABLE Manila</h2>
+    <section class="dpwh-talks">
+        <div class="title-container">
+            <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">DPWH Talks</h2>
+            <p class="subtitle" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                Making Public Signage Accessible for the Visually Impaired
+            </p>
         </div>
-        <div class="content">
-            <div class="column col-left reveal">
-                <div class="img-card" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="200">
-                    <img src="Image/able.png" alt="">
+    
+        <div class="video-content-container">
+            <div class="video-wrapper" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="400">
+                <video autoplay loop muted playsinline>
+                    <source src="Titas_Intro.mp4" type="video/mp4">
+                    <!-- Fallback image if video doesn't load -->
+                    <img src="Image/able.png" alt="DPWH Talks about accessible signage">
+                </video>
+            </div>
+            <div class="description-wrapper" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="600">
+                <p class="video-description">
+                    An in-depth interview with DPWH on current efforts, challenges, and future plans to improve public
+                    signage for people with low vision in Metro Manila
+                </p>
+            </div>
+        </div>
+
+        <section class="accessibility-campaign">
+            <div class="title-container">
+                <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">Through the Eyes of PWD</h2>
+                <p class="subtitle" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    Perspectives on Public Signage
+                </p>
+            </div>
+        
+            <div class="campaign-content-container">
+                <div class="text-content" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="400">
+                    <h2 class="content-title" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+                        <b>Accessibility</b>
+                    </h2>
+                    <p class="campaign-description">
+                        Real stories and daily struggles of people with low vision, to be presented to DPWH and MMDA to
+                        highlight the urgent need for inclusive and accessible public signage in Metro Manila.
+                    </p>
+                </div>
+        
+                <div class="video-wrapper" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="600">
+                    <video autoplay loop muted playsinline class="responsive-video">
+                        <source src="Titas_Intro.mp4" type="video/mp4">
+                        <!-- Fallback image if video doesn't load -->
+                        <img src="Image/able.png" alt="Accessibility campaign about public signage">
+                    </video>
                 </div>
             </div>
-            <div class="column col-right reveal">
-                <h2 class="content-title" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200"><b></b></h2>
-                <p class="paragraph-text" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="400">
-               is an advocacy platform that promotes inclusive and accessible signage in Metro Manila for people with visual
-            impairments especially those with blurred vision, color blindness, and other low vision conditions. <br>
-            <br>
-
-             Through documentary storytelling, user-submitted experiences, and downloadable design guides, we aim to raise awareness,
-               influence better urban design, and empower both designers and government agencies to take action
-
-               <br>We believe that accessibility starts with visibility and every sign should be seen, read, and understood by all.</p>
-                
-                
-                <a href="#" class="btn" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="600">See more</a>
-            </div>
-        </div>
+      
+  
         
 
        
@@ -121,24 +152,25 @@
         <!-- Animated background particles -->
         <div class="particles" id="particles"></div>
 
-            <div class="title reveal">
-                <h4 class="section-title" data-aos="fade-up" data-aos-duration="1000">Why Accessible Signage Matters: Seeing the City Through Inclusive Design
-</h4>
+            <div class="title-container">
+                <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">Why Accessible Signage Matters</h2>
+                <p class="subtitle" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    Seeing the City Through Inclusive Design
+
+                </p>
+            </div>
             </div>
     <center> <p class="paragraph-text" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="400">
-            Add this ( Giving attention to public signage is important because signs guide people through everyday life especially <br>
-        
-            in complex environments like roads, transport terminals, hospitals, and government buildings. <br>
-            Here’s why it matters)
-            under “why accessible signage matters” Seeing the City through Inclusive Design 
+        Giving attention to public signage is important because signs guide people through everyday life <br>especially in complex
+        environments like roads, transport terminals, hospitals, and government buildings. 
         </p></center>
             <div class="timeline">
                 <!-- Elementary School -->
                 <div class="timeline-item">
                     <div class="timeline-card">
-                        <span class="date"></span>
-                        <h2></h2>
-                        <p><strong>Safety
+                       <!-- <span class="date"></span> -->
+                        <h2>Safety</h2> 
+                        <p><strong>
                         Clear and accessible signage prevents accidents. For people with visual impairments, good signage can mean the
                         difference between a safe commute and a dangerous situation like missing exits, crossing roads unsafely, or getting lost
                         in unfamiliar spaces.
@@ -151,9 +183,9 @@
                 <!-- High School -->
                 <div class="timeline-item">
                     <div class="timeline-card">
-                        <span class="date"></span>
-                        <h2></h2>
-                        <p><strong>Navigation and Confidence
+                       <!-- <span class="date"></span> -->
+                        <h2>Navigation and Confidence</h2>
+                        <p><strong>
 Public signs help everyone find their way. But for persons with low vision or other disabilities, poor signage becomes a barrier. Accessible signs restore a person’s
  freedom to move independently, without needing constant assistance.</strong></p>
                         
@@ -164,9 +196,9 @@ Public signs help everyone find their way. But for persons with low vision or ot
                 <!-- Senior High School -->
                 <div class="timeline-item">
                     <div class="timeline-card">
-                        <span class="date"></span>
-                        <h2></h2>
-                        <p><strong>Inclusion and Equal Access
+                       <!--<span class="date"></span> -->
+                        <h2>Inclusion and Equal Access</h2>
+                        <p><strong>
                         When signs are designed only for people with perfect vision, it excludes a large part of the population including the
                         elderly, people with disabilities, and even those in low-light or high-glare conditions. Inclusive signage ensures
                         everyone is considered.</strong></p>
@@ -178,9 +210,9 @@ Public signs help everyone find their way. But for persons with low vision or ot
                 <!-- Internship -->
                 <div class="timeline-item">
                     <div class="timeline-card">
-                        <span class="date"></span>
-                        <h2></h2>
-                        <p><strong>It’s a Right Not a Privilege
+                        <!-- <span class="date"></span> -->
+                        <h2>It’s a Right Not a Privilege</h2>
+                        <p><strong>
                         Under international standards like the UN Convention on the Rights of Persons with Disabilities (CRPD), accessible
                         information and signage are part of every citizen’s right to access public services.</strong></p>
                         
@@ -190,9 +222,9 @@ Public signs help everyone find their way. But for persons with low vision or ot
                 <!-- College -->
                 <div class="timeline-item">
                     <div class="timeline-card">
-                        <span class="date"></span>
-                        <h2></h2>
-                        <p><strong>Better Urban Design
+                        <!-- <span class="date"></span> -->
+                        <h2>Better Urban Design</h2>
+                        <p><strong>
                         Cities that invest in inclusive signage are more organized, user-friendly, and future ready. It reflects a commitment to
                         universal design, <b>where the environment works for all people, regardless of ability.</b></strong></p>
                        
@@ -205,67 +237,79 @@ Public signs help everyone find their way. But for persons with low vision or ot
 
 <!-- Skill Section -->
 
-    <section class="skills" id="skills" aria-label="My Skills">
+<section class="article" id="article" aria-label="Accessible Signage Article">
+    <div class="container">
         <div class="title">
-            <h1 class="section-title" data-aos="fade-up" data-aos-duration="1000">Seeing Clearly: The Urgent Need for Accessible Signage for People <br> with Blurred Vision
-</h1>
+            <h1 class="section-title" data-aos="fade-up" data-aos-duration="1000">Beyond the Surface</h1>
+            <h2 class="section-subtitle" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Why Accessible
+                Signage Should Come in All Forms</h2>
         </div>
+
         <div class="content">
             <div class="col-left">
-                <h2 class="content-title" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">My Skills and
-                    Experiences</h2>
-                <p class="paragraph-text" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="300">
-                    Lorem ipsum
+                <p class="paragraph-text" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
+                Imagine turning a simple walk to the store into a puzzle of blurred signs, hidden curbs, and uncertain paths that’s
+                daily life for someone with low vision. Across the Philippines and past, thousands and thousands of people with visual
+                impairments come across needless daily obstacles lots of them as a result of something so commonplace we regularly take
+                it without any consideration: signage. Whether too small, low in assessment, poorly placed, or missing entirely,
+                inaccessible signage limits independence, compromises safety, and chips away at a person’s dignity.
                 </p>
-                <a href="#about" class="btn" data-aos="zoom-in-right" data-aos-duration="1000" data-aos-delay="400">Learn
-                    More About Me</a>
+
+                
+
+                <p class="paragraph-text" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
+                    The trouble isn't without answers. Research shows that simple design modifications could make a substantial difference
+                    in accessibility. For example, signs ought to be at least seven percentage of the reading distance and feature a
+                    excessive brightness evaluation to improve visibility for humans with low vision. Yet, regardless of those findings,
+                    many present day accessibility requirements awareness heavily on tactile factors like Braille at the same time as
+                    overlooking visual clarity. This leaves an opening for people who rely upon partial sight in preference to touch, making
+                    it unnecessarily hard for them to study and interpret critical data in public spaces.
+                </p>
+                <p class="paragraph-text" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
+                    The effect of on hand signage is obvious in real global examples. At a college campus in Cebu,
+                    students with visible impairments to start with struggled to navigate the grounds due to the absence
+                    of good enough Braille wayfinding structures. Once nicely-designed Braille signage became installed,
+                    these students reported a marked improvement of their orientation, mobility, and self assurance. The
+                    transformation they skilled demonstrates that accessibility measures are not simply theoretical they
+                    have tangible, existence converting effects on people's every day lives.
+                </p>
             </div>
+
+
             <div class="col-right">
-                <div class="bar" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
-                    <div class="info">
-                        <span>HTML</span>
-                        <span>95%</span>
-                    </div>
-                    <div class="line html" aria-label="HTML skill level: 95%"></div>
-                </div>
-                <div class="bar" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                    <div class="info">
-                        <span>CSS</span>
-                        <span>90%</span>
-                    </div>
-                    <div class="line css" aria-label="CSS skill level: 90%"></div>
-                </div>
-                <div class="bar" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
-                    <div class="info">
-                        <span>JavaScript</span>
-                        <span>80%</span>
-                    </div>
-                    <div class="line javascript" aria-label="JavaScript skill level: 80%"></div>
-                </div>
-                <div class="bar" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
-                    <div class="info">
-                        <span>Python</span>
-                        <span>60%</span>
-                    </div>
-                    <div class="line python" aria-label="Python skill level: 60%"></div>
-                </div>
-                <div class="bar" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
-                    <div class="info">
-                        <span>PHP</span>
-                        <span>65%</span>
-                    </div>
-                    <div class="line php" aria-label="PHP skill level: 65%"></div>
-                </div>
-                <div class="bar" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
-                    <div class="info">
-                        <span>C#</span>
-                        <span>50%</span>
-                    </div>
-                    <div class="line csharp" aria-label="csharp skill level: 50%"></div>
-                </div>
+                
+
+                <p class="paragraph-text" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="600">
+                    Advancements in generation are actually paving the manner for more inclusive answers. Contemporary
+                    digital signage systems can integrate multiple accessibility capabilities consisting of haptic
+                    feedback, audio narration, Braille panels, and customizable show settings. Some even allow customers
+                    to employ text-to-speech era to pay attention spoken content, regulate font size, or enhance
+                    comparison. Audible format signage can flip static symptoms into interactive voice courses, while
+                    virtual sign structures equipped with infrared readers and speaking maps offer indoor navigation
+                    that supports independent journey for visually impaired users. These improvements aren't restrained
+                    to serving people with vision impairments; they enhance navigation and consumer revel in for
+                    everybody.
+                </p>
+
+                <p class="paragraph-text" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="700">
+                    Accessibility, but, isn't a privilege or a charitable gesture it's miles a necessity. Public spaces
+                    that contain clearer visuals, high assessment textual content, Braille, tactile paving, and audio
+                    cues create environments where absolutely everyone can navigate properly and hopefully. By raising
+                    cognizance, we can inspire nearby governments, agencies, and community planners to undertake
+                    inclusive signage suggestions. The modifications required are regularly truthful, but the results
+                    may be transformative.
+                </p>
+
+                <p class="paragraph-text" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">
+                    In the stop, the route towards accessibility is not complicated it simply calls for the desire to
+                    make it appear. If we work collectively, we will create areas where nobody is left questioning where
+                    they're or in which they want to go. Signage ought to not be a barrier; it should be a bridge to
+                    independence, protection, and dignity for all.
+                </p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Services Section -->
     <section class="services" id="services">
@@ -580,23 +624,77 @@ Public signs help everyone find their way. But for persons with low vision or ot
 
     <!-- The Modal -->
      <section class="comments-section" id="comments-section">
-    <div class="comments-container">
-        <div class="decorative-circle circle-1"></div>
-        <div class="decorative-circle circle-2"></div>
-        
-        <div class="comments-header">
-            <h1>Join the Conversation</h1>
-            <p>Share your thoughts, ideas, and feedback with our community. Your voice matters!</p>
-        </div>
-        
-        <div class="comments-wrapper">
-            <div id="loading-comments" class="loading-message">Loading comments section...</div>
-            <div class="powr-comments" id="0c3eca25_1744361836"></div>
+    <div class="auth-modal" id="auth-modal">
+        <div class="auth-content">
+            <span class="close-auth">&times;</span>
+            <div class="auth-tabs">
+                <button class="tab-btn active" id="login-tab">Login</button>
+                <button class="tab-btn" id="register-tab">Register</button>
+            </div>
+    
+            <div class="auth-form" id="login-form">
+                <h3>Login to Comment</h3>
+                <div class="form-group">
+                    <input type="email" id="login-email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="login-password" placeholder="Password" required>
+                </div>
+                <button id="login-btn" class="auth-submit">Login</button>
+            </div>
+    
+            <div class="auth-form" id="register-form" style="display:none;">
+                <h3>Create Account</h3>
+                <div class="form-group">
+                    <input type="text" id="register-firstname" placeholder="First Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="register-lastname" placeholder="Last Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="register-email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="register-password" placeholder="Password" required>
+                </div>
+                <button id="register-btn" class="auth-submit">Register</button>
+            </div>
         </div>
     </div>
-
-    <script src="scriptComment.js"></script>
-    <script src="https://www.powr.io/powr.js?platform=html"></script>
+    
+    
+        <div class="user-info" id="user-info" style="display:none;">
+            <div class="user-greeting">
+                <span id="welcome-message"></span>
+                <button id="logout-btn" class="logout-btn">Logout</button>
+            </div>
+        </div>
+    
+        <div class="comment-form" id="comment-form">
+            <h2>Leave your comment</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <input type="text" id="comment-title" placeholder="Comment Title" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <textarea id="comment-text" placeholder="Share your thoughts..." required></textarea>
+            </div>
+            <button id="submit-comment" class="submit-btn">Post Comment</button>
+        </div>
+    
+        <div class="comments-container" id="comments-container">
+            <h2>Community Comments</h2>
+            <div class="comments-list" id="comments-list">
+                <!-- Comments will be loaded here -->
+            </div>
+        </div>
+    
+        <footer>
+            <p>@ POVIR</p>
+            <p>Comments! - Create your own for free!</p>
+        </footer>
+    </div>
 </section>
   <section class="footer" id="footer">
     
@@ -626,6 +724,7 @@ Public signs help everyone find their way. But for persons with low vision or ot
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js"></script>
     <script src="scriptFileUpload.js"></script>
+    <script src="FileUploadScripts.js"></script>
     <script>
       AOS.init({offset:0});
     </script>

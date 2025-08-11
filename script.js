@@ -1,69 +1,15 @@
-             //Typing  script
-             document.addEventListener('DOMContentLoaded', function () {
-                const texts = [
-                    "VisionABLE Manila"
-                    
-                ];
+           document.addEventListener('DOMContentLoaded', function () {
+    const texts = [
+        ""
+    ];
 
-                const animatedText = document.querySelector('.animated-text');
-                const cursor = document.querySelector('.cursor');
-
-                let textIndex = 0;
-                let charIndex = 0;
-                let isDeleting = false;
-                let typingSpeed = 150;
-                let isWaiting = false;
-
-                function type() {
-                    // If we're in waiting state between words, skip processing
-                    if (isWaiting) {
-                        setTimeout(type, typingSpeed);
-                        return;
-                    }
-
-                    const currentText = texts[textIndex];
-
-                    if (!isDeleting && charIndex <= currentText.length) {
-                        // Typing forward
-                        animatedText.textContent = currentText.substring(0, charIndex);
-                        charIndex++;
-                        typingSpeed = 150;
-
-                        if (charIndex > currentText.length) {
-                            // Finished typing current word
-                            isDeleting = true;
-                            typingSpeed = 1000; // Pause at full word
-                            isWaiting = true;
-                        }
-                    } else if (isDeleting && charIndex >= 0) {
-                        // Deleting backward
-                        animatedText.textContent = currentText.substring(0, charIndex);
-                        charIndex--;
-                        typingSpeed = 50;
-
-                        if (charIndex < 0) {
-                            // Finished deleting current word
-                            isDeleting = false;
-                            textIndex = (textIndex + 1) % texts.length;
-                            typingSpeed = 500; // Pause before next word
-                            isWaiting = true;
-                        }
-                    }
-
-                    // Reset waiting state after delay
-                    if (isWaiting) {
-                        setTimeout(() => {
-                            isWaiting = false;
-                            type();
-                        }, typingSpeed);
-                    } else {
-                        setTimeout(type, typingSpeed);
-                    }
-                }
-
-                // Start animation
-                type();
-            });
+    const animatedText = document.querySelector('.animated-text');
+    
+    // Simply display the text without animation
+    if (texts.length > 0) {
+        animatedText.textContent = texts[0];
+    }
+});
          //<!--Education cards script -->
             // Create animated particles
                 function createParticles() {

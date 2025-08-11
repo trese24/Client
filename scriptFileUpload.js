@@ -327,3 +327,4 @@ document.addEventListener('DOMContentLoaded', function() {
         return { iconClass, typeClass };
     }
 });
+

