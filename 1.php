@@ -1,5 +1,5 @@
 <?php
-require "upload.php";
+require "config.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $title = $conn->real_escape_string($_POST['comment_title']);

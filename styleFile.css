@@ -198,6 +198,11 @@ h1 {
     padding: 2rem;
 }
 
+.file-type.psd {
+    background-color: #001d26;
+    color: #31c5f0;
+}
+
 
 
 @keyframes expand {

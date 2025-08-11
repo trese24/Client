@@ -326,5 +326,61 @@ document.addEventListener('DOMContentLoaded', function() {
         
         return { iconClass, typeClass };
     }
+    // Initial setup for status message
+    statusDiv.style.display = 'none';});
+
+// Add this to your updateSelectedFiles function
+const maxSize = 500 * 1024 * 1024; // 500MB
+
+function updateSelectedFiles() {
+    const selectedFiles = fileInput.files;
+    
+    if (selectedFiles.length === 0) {
+        selectedFilesDiv.textContent = '';
+        uploadBtn.disabled = true;
+        return;
+    }
+    
+    // Check file sizes
+    let validFiles = true;
+    for (let i = 0; i < selectedFiles.length; i++) {
+        if (selectedFiles[i].size > maxSize) {
+            showStatus(`File ${selectedFiles[i].name} is too large (max 500MB)`, 'error');
+            validFiles = false;
+            break;
+        }
+    }
+    
+    if (!validFiles) {
+        fileInput.value = '';
+        selectedFilesDiv.textContent = '';
+        uploadBtn.disabled = true;
+        return;
+    }
+    
+    // Rest of your existing code...
+}
+
+let uploadController = null;
+
+// In your uploadBtn click handler:
+uploadController = new AbortController();
+
+fetch('upload.php', {
+    method: 'POST',
+    body: formData,
+    signal: uploadController.signal,
+    // ... rest of the options
 });
 
+// Cancel button handler
+document.getElementById('cancelUploadBtn').addEventListener('click', function() {
+    if (uploadController) {
+        uploadController.abort();
+        showStatus('Upload cancelled', 'warning');
+        uploadBtn.disabled = false;
+        uploadSpinner.style.display = 'none';
+        progressBar.style.display = 'none';
+        this.style.display = 'none';
+    }
+});
